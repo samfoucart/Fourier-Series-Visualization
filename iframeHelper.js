@@ -7,6 +7,7 @@ window.onload = () => sendPostMessage();
 window.onresize = () => sendPostMessage();
 let height;
 const sendPostMessage = () => {
+    console.log("sendPostMessage()")
     if (height !== document.getElementById('container').offsetHeight) {
         height = document.getElementById('container').offsetHeight;
         window.parent.postMessage({
