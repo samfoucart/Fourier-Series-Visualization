@@ -8,8 +8,12 @@ window.onresize = () => sendPostMessage();
 let height;
 const sendPostMessage = () => {
     console.log("sendPostMessage()")
-    if (height !== document.getElementById('container').offsetHeight) {
-        height = document.getElementById('container').offsetHeight;
+    if (!document.getElementById('iframeContainer')) {
+        console.log("broken")
+        return
+    }
+    if (height !== document.getElementById('iframeContainer').offsetHeight) {
+        height = document.getElementById('iframeContainer').offsetHeight;
         window.parent.postMessage({
             frameHeight: height
         }, '*');
