@@ -1,0 +1,141 @@
+/* Animations */
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Elements */
+a {
+    text-decoration: none;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+body {
+    font-family: Oswald;
+    background-color: #f3d1dc;
+    color: #000000;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    animation-duration: 1s;
+    animation-name: fade-in;
+    margin: auto;
+    width: 100%;
+}
+
+.top-div {
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    list-style-type: none;
+}
+
+.nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav li {float: right;}
+
+.top-nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: none;
+    font-size: 16pt;
+}
+
+.top-nav li a:hover:not(.active) {background-color: #111;}
+
+.top-nav li a.active {
+    background-color: #D2A3A9;
+    color: #111;
+}
+
+.top-nav li.introduction {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.top-nav .icon {
+    display: none;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+canvas {
+    width: 95vw;
+    height: 50vh;
+    display: block;
+}
+
+.HeatController {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller-item {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1080px) {
+    .top-nav li {display: none;}
+    .introduction {float: left;}
+    .top-nav li.top-nav-overflow {
+        display: block;
+        float: right;
+    }
+    .top-nav .icon {
+        display: block;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .responsive.nav-items li {
+        float: none;
+        display: block;
+    }
+
+    .responsive.nav-items .icon {
+        display: block;
+        float: right;
+    }
+
+    .responsive.nav-items .introduction {float: left;}
+}

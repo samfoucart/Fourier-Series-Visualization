@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sam Foucart - Home</title>
+    <meta name="description" content="Sam Foucart - Home">
+    <meta name="author" content="Sam Foucart">
+    <link rel="stylesheet" href="HeatEquation.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<main>
+    <div class="content-body">
+        <div id="WebGL-div">
+            <h1>WebGL Single Dimensional Heat Equation Visualization</h1>
+            <canvas id="WebGL-canvas"></canvas>
+            <div class="HeatController">
+                <div class="controller-item">
+                    <button id="coefficient-subtract">-</button>
+                    <p>Number of Fourier Series Coefficients: </p>
+                    <p id="num-coefficients-text">100</p>
+                    <button id="coefficient-add">+</button>
+                </div>
+                <div class="controller-item">
+                    <button id="time-subtract">-</button>
+                    <p>Current Time: </p>
+                    <p id="current-time">0</p>
+                    <button id="time-add">+</button>
+                </div>
+                <div class="controller-item">
+                    <button id="simulate-button">Start Simulation</button>
+                </div>
+            </div>
+            <i>This project is a visualization of the Fourier series solution to the single dimensional heat equation along a rod. The mesh is generated and shaded using WebGL.</i>
+            <p>Click and drag on the mesh to view from different angles.</p>
+            <p>Source code is available at:</p>
+            <a href="https://github.com/samfoucart/samfoucart">https://github.com/samfoucart/samfoucart</a>
+            <h2>References:</h2>
+            <p>[1] Gregg Tavares. "WebGL Fundamentals" https://webglfundamentals.org/ , https://github.com/gfxfundamentals/webgl-fundamentals , Accessed November 2020</p>
+            <p>[2] David L. Powers. "Boundary Value Problems:  and Partial Differential Equations." Academic Press, 2006.</p>
+            <p>[3] Edward Angel and Dave Shreiner. "Interactive Computer Graphics: A Top-Down Approach with OpenGL" Sixth Edition, Addison-Wesley. 2012</p>
+            <p>[4] Pavel Dobryakov. "WebGL Fluid Simulation" https://github.com/PavelDoGreat/WebGL-Fluid-Simulation</p>
+        </div>
+    </div>
+</main>
+
+<script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/primitives.js"></script>
+<script src="HeatEquation.js"></script>
+</body>
+</html>
