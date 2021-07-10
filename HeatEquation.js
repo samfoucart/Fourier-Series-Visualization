@@ -55,15 +55,15 @@ function initializeRenderer() {
     }
 
     let meshUniforms = {
-        u_lightWorldPos: [0, .5, 0],
+        u_lightWorldPos: [0, .4, 0],
         u_viewInverse: m4.identity(),
         u_lightColor: [1, 1, 1, 1],
         u_worldViewProjection: m4.identity(),
         u_world: m4.identity(),
         u_worldInverseTranspose: m4.identity(),
         u_specular: [1, 1, 1, 1],
-        u_shininess: 1000,
-        u_specularFactor: .9,
+        u_shininess: 10,
+        u_specularFactor: .9999,
     }
 
     let gridUniforms = {
@@ -141,7 +141,7 @@ function initializeRenderer() {
         let aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
         let projectionMatrix = m4.perspective(fieldOfViewRadians, aspect, .2, 2000);
 
-        let cameraPosition = [0, 0, -2];
+        let cameraPosition = [0, 0, -1.75];
         let target = [0, 0, 0];
         let up = [0, 1, 0];
         let cameraMatrix = m4.lookAt(cameraPosition, target, up, meshUniforms.u_viewInverse);
@@ -721,7 +721,7 @@ const meshFragmentShaderLighting = `
       vec4 outColor = vec4((
       u_lightColor * (litR.y * v_ambient +
                     u_specular * litR.z * u_specularFactor)).rgb,
-          1);
+          1) + (.2, .2, .2, .2);
       gl_FragColor = outColor;
     }
 `;
